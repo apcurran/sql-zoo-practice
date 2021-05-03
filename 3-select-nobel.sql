@@ -53,3 +53,28 @@ WHERE
     subject = 'Medicine' AND yr < 1910
     OR
     subject = 'Literature' AND yr >= 2004;
+
+-- 11.
+SELECT *
+FROM nobel
+WHERE winner = 'PETER GRÜNBERG';
+
+-- 12.
+SELECT *
+FROM nobel
+WHERE winner = 'EUGENE O''NEILL';
+
+-- 13.
+SELECT winner, yr, subject
+FROM nobel
+WHERE winner LIKE 'Sir%'
+ORDER BY yr DESC, winner;
+
+-- 14.
+SELECT winner, subject
+FROM nobel
+WHERE yr = 1984
+ORDER BY
+    CASE WHEN subject IN ('Physics', 'Chemistry') THEN 1 ELSE 0 END,
+    subject,
+    winner;
