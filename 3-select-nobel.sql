@@ -45,3 +45,11 @@ WHERE
 SELECT *
 FROM nobel
 WHERE yr = 1980 AND subject NOT IN ('Chemistry', 'Medicine');
+
+-- 10.
+SELECT *
+FROM nobel
+WHERE
+    subject = 'Medicine' AND yr < 1910
+    OR
+    subject = 'Literature' AND yr >= 2004;
