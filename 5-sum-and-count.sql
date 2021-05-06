@@ -15,3 +15,8 @@ WHERE continent = 'Africa';
 SELECT COUNT(area)
 FROM world
 WHERE area >= 1000000;
+
+-- 5.
+SELECT SUM(population)
+FROM world
+WHERE name IN('Estonia', 'Latvia', 'Lithuania');
