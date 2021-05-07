@@ -32,3 +32,21 @@ SELECT
 FROM game
 INNER JOIN goal ON id = matchid
 WHERE player LIKE 'Mario%';
+
+-- 5.
+SELECT
+    player,
+    teamid,
+    coach,
+    gtime
+FROM goal
+INNER JOIN eteam ON teamid = id
+WHERE gtime <= 10;
+
+-- 6.
+SELECT
+    mdate,
+    teamname
+FROM game
+INNER JOIN eteam ON team1 = eteam.id
+WHERE eteam.coach = 'Fernando Santos';
