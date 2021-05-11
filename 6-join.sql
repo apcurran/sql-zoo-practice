@@ -50,3 +50,9 @@ SELECT
 FROM game
 INNER JOIN eteam ON team1 = eteam.id
 WHERE eteam.coach = 'Fernando Santos';
+
+-- 7.
+SELECT player
+FROM goal
+INNER JOIN game ON (game.id = goal.matchid)
+WHERE game.stadium = 'National Stadium, Warsaw';
