@@ -30,3 +30,24 @@ SELECT
     teacher.name,
     COALESCE(teacher.mobile, '07986 444 2266')
 FROM teacher;
+
+-- 6.
+SELECT
+    teacher.name,
+    COALESCE(dept.name, 'None')
+FROM teacher
+LEFT JOIN dept ON teacher.dept = dept.id;
+
+-- 7.
+SELECT
+    COUNT(teacher.name),
+    COUNT(teacher.mobile)
+FROM teacher;
+
+-- 8.
+SELECT
+    dept.name,
+    COUNT(teacher.name)
+FROM teacher
+RIGHT JOIN dept ON teacher.dept = dept.id
+GROUP BY dept.name;
