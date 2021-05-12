@@ -16,3 +16,11 @@ SELECT
     dept.name
 FROM teacher
 LEFT JOIN dept ON teacher.dept = dept.id;
+
+-- 4.
+SELECT
+    teacher.name,
+    dept.name
+FROM teacher
+RIGHT JOIN dept ON teacher.dept = dept.id
+WHERE dept.name IS NOT NULL;
