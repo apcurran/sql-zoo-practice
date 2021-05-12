@@ -24,3 +24,9 @@ SELECT
 FROM teacher
 RIGHT JOIN dept ON teacher.dept = dept.id
 WHERE dept.name IS NOT NULL;
+
+-- 5.
+SELECT
+    teacher.name,
+    COALESCE(teacher.mobile, '07986 444 2266')
+FROM teacher;
