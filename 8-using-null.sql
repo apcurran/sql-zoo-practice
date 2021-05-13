@@ -51,3 +51,11 @@ SELECT
 FROM teacher
 RIGHT JOIN dept ON teacher.dept = dept.id
 GROUP BY dept.name;
+
+-- 9.
+SELECT
+    teacher.name,
+    CASE WHEN dept IN (1, 2) THEN 'Sci'
+         ELSE 'Art'
+    END
+FROM teacher;
