@@ -55,7 +55,18 @@ GROUP BY dept.name;
 -- 9.
 SELECT
     teacher.name,
-    CASE WHEN dept IN (1, 2) THEN 'Sci'
-         ELSE 'Art'
+    CASE
+        WHEN dept IN (1, 2) THEN 'Sci'
+        ELSE 'Art'
+    END
+FROM teacher;
+
+-- 10.
+SELECT
+    teacher.name,
+    CASE
+        WHEN dept IN (1, 2) THEN 'Sci'
+        WHEN dept = 3 THEN 'Art'
+        ELSE 'None'
     END
 FROM teacher;
