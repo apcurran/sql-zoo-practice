@@ -14,3 +14,15 @@ SELECT
 FROM stops
 INNER JOIN route ON route.stop = stops.id
 WHERE company = 'LRT' AND num = '4';
+
+-- 4.
+SELECT
+    company,
+    num,
+    COUNT(*)
+FROM route
+WHERE stop=149 OR stop=53
+GROUP BY
+    company,
+    num
+HAVING COUNT(*) = 2;
